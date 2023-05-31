@@ -1,0 +1,5 @@
+##LIST OF ARTICLES WHICH CANNOT BE DOWNLOADED
+
+1) Probabilistic methods for web caching - https://www.sciencedirect.com/science/article/abs/pii/S0166531601000451
+2) Cache Replacement Algorithms In Java - https://medium.com/javarevisited/cache-replacement-algorithms-in-java-parts1-f63f2962a714
+3) Caching in theory and practice - https://dropbox.tech/infrastructure/caching-in-theory-and-practice
