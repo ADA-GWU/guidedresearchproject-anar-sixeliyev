@@ -1,7 +1,7 @@
 # guidedresearchproject-anar-sixeliyev
 # Board Game: Tactical Tic-Tac-Toe
 
-![Game Screenshot](https://anar-sixeliyev.github.io/TTT/)
+Game link(without AI) (https://anar-sixeliyev.github.io/TTT/)
 
 ## Description
 
