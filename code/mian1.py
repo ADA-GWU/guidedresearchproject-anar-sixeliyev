@@ -7,6 +7,8 @@ import time
 from timeit import default_timer as timer
 
 import numpy as np
+
+from api_wrapper import APIWrapper
 from board import *
 from heuristic import *
 from minimax import *
@@ -22,15 +24,15 @@ def opp_play():
 def local_playing():
     board_size = int(input("Please enter board size: "))
     target = int(input("Please enter consecutive symbol size: "))
-    agent_player = int(input("Choose agent side as 1 or -1"))
-
+    agent_player = int(input("Choose agent side as 1 or -1: "))
+    memory = {}
     game_board = np.zeros((board_size, board_size), dtype=np.int32)
     opp_player = -agent_player
-    # memory = {}
+
     if agent_player == 1:
         print("AI Plays...")
-        pos_x, pos_y = best_next_move(
-            game_board, target, agent_player, opp_player)
+        pos_x, pos_y = best_next_move(game_board, target, agent_player,
+                                      opp_player, 3, memory)
         game_board[pos_x, pos_y] = agent_player
         #         print_board(game_board)
         print(game_board)
@@ -57,18 +59,18 @@ def local_playing():
         game_board[pos_x, pos_y] = opp_player
         print(game_board)
         print("Human Played")
-        print("====================") 
+        print("====================")
 
         if game_end(game_board, target) == opp_player:
             print("GAME_OVER: HUMAN WINS")
             break
 
         if tie_game(game_board):
-            print("GAME_OVER: TIE") 
+            print("GAME_OVER: TIE")
             break
         print("AI Plays...")
-        pos_x, pos_y = best_next_move(
-            game_board, target, agent_player, opp_player)
+        pos_x, pos_y = best_next_move(game_board, target, agent_player,
+                                      opp_player, 3, memory)
         game_board[pos_x, pos_y] = agent_player
         print(game_board)
         print("AI Played in postion ({},{})".format(pos_x, pos_y))
@@ -76,23 +78,21 @@ def local_playing():
 
 
 def main():
-    local_playing()
-    # board_size = 6
-    # target = 4
-    # dpth = 3
-    # mem = {}
-    # bf = 'board_evals/b_{}_{}.pkl'.format(board_size, target)
-    # if os.path.isfile(bf):
-    #     with open(bf, 'rb') as fp:
-    #         mem = pickle.load(fp)
-    #         print("Learned Boards:")
-    #         print("Count of learned boards:{}".format(len(mem)))
+    parser = argparse.ArgumentParser()
 
-    # if (len(mem) > 300000):
-    #     mem = dict(itertools.islice(mem.items(), 300000))
-    # with open(bf, 'wb') as fp:
-    #     pickle.dump(mem, fp)
-    #     print('dictionary saved successfully to file')
+    parser.add_argument("-local",
+                        "--local",
+                        dest="local_playing",
+                        help="If you want whether play locally or globally",
+                        action=argparse.BooleanOptionalAction,
+                        default=False)
+
+    args = parser.parse_args()
+
+    boolean_local = args.local_playing
+
+    if boolean_local:
+        local_playing()
 
 
 if __name__ == "__main__":
