@@ -113,7 +113,9 @@ def local_playing():
         NEXT_BOARD_X = pos_x
         NEXT_BOARD_Y = pos_y
         # print_board(game_board[pos_X, pos_Y])
-        print(game_board)
+        # print(game_board)
+        print_ultimate_board(game_board)
+
         # print('~~~~MOVE MADE - UPDATED BOARD: \n', game_board)
         print("AI Played in postion ({},{})".format(pos_x, pos_y))
         print("====================")
@@ -133,7 +135,7 @@ def local_playing():
         print("Human Plays...")
         if (check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], agent_player) or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], opp_player)):
             print('<====BOARD {} {} IS WON, SELECT A NEW BOARD====>\n'.format(
-                  NEXT_BOARD_X, NEXT_BOARD_Y))
+                NEXT_BOARD_X, NEXT_BOARD_Y))
             NEXT_BOARD_X, NEXT_BOARD_Y = select_board()
             while (check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], agent_player) or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], opp_player)):
                 NEXT_BOARD_X, NEXT_BOARD_Y = select_board()
@@ -145,7 +147,8 @@ def local_playing():
         game_board[NEXT_BOARD_X, NEXT_BOARD_Y][pos_x, pos_y] = opp_player
         NEXT_BOARD_X = pos_x
         NEXT_BOARD_Y = pos_y
-        print(game_board)
+        # print(game_board)
+        print_ultimate_board(game_board)
 
         print("Human Played")
         print("====================")
@@ -174,7 +177,9 @@ def local_playing():
         NEXT_BOARD_X = pos_x
         NEXT_BOARD_Y = pos_y
 
-        print(game_board)
+        # print(game_board)
+        print_ultimate_board(game_board)
+
         print("AI Played in postion ({},{}) - ({},{})".format(pos_X, pos_Y, pos_x, pos_y))
         print("====================")
 

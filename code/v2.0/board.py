@@ -77,3 +77,31 @@ def print_board(board):
             for row in board[i][j]:
                 print(" | ".join(cell if cell else 0 for cell in row))
                 print("-" * 9)
+
+
+def print_ultimate_board(ultimate_board):
+    for large_row in range(3):
+        for small_row in range(3):
+            for large_col in range(3):
+                for small_col in range(3):
+                    cell = ultimate_board[large_row][large_col][small_row][small_col]
+                    if cell == "":
+                        print(" ", end=" ")
+                    else:
+                        if(cell ==1):
+                            print("X", end=" ")
+                        elif(cell == -1):
+                            print("O", end=" ")
+                        else:
+                            print("*", end=" ")
+                    if small_col < 2:
+                        print("|", end=" ")
+                if large_col < 2:
+                    print(" || ", end=" ")
+            print()
+            # print("-" * 9)
+            if small_row > 1:
+                print("-" * 40)
+                print("-" * 40)
+
+    # print("=" * 71)

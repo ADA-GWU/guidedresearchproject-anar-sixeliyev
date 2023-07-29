@@ -22,7 +22,7 @@ def evaluate_board_ult(ultimate_board, player, opponent):
     # Evaluate player's control over the next small board move
     player_control = count_next_small_board_moves(ultimate_board, player)
     opponent_control = count_next_small_board_moves(ultimate_board, opponent)
-    print('player_control, opponent_control', player_control, opponent_control)
+    # print('player_control, opponent_control', player_control, opponent_control)
     score += (player_control - opponent_control) * 10
 
     return score
