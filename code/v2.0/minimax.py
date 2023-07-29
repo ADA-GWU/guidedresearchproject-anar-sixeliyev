@@ -195,7 +195,7 @@ def best_next_move_small(board, POS_X, POS_Y, target, agentNo, oppNo, depth=3, m
                     return [POS_X, POS_Y, i, j]
                 # calling minimax
                 v = minimax_ult(board, depth, -np.inf, np.inf, target, False,
-                            agentNo, oppNo, memory)
+                                agentNo, oppNo, memory)
                 print("value is {} for coordinates({},{})".format(v, i, j))
                 # print("Board evaluation after playing {},{}:{}".format(
                 #     i, j, evaluate_board_ult(board, target)))
@@ -204,3 +204,89 @@ def best_next_move_small(board, POS_X, POS_Y, target, agentNo, oppNo, depth=3, m
                     best_val = v
                     best_move = [POS_X, POS_Y, i, j]
     return best_move
+
+
+def best_next_move_small_large(board, POS_X, POS_Y, target, agentNo, oppNo, depth=3, memory={}):
+    best_move = []
+    best_val = -np.inf
+    small_board = board[POS_X, POS_Y]
+    # depth = 3
+    print('====> board.shape', board.shape)
+    for i in range(3):
+        for j in range(3):
+            if (small_board[i][j] == 0):
+                small_board[i][j] = agentNo
+
+                # optimization: if winning, then return
+                if (check_large_board_winner(board, agentNo) or check_large_board_winner(board, oppNo)):
+                    #                     print("game end with winning")
+                    small_board[i][j] = 0
+                    return [POS_X, POS_Y, i, j]
+                # calling minimax
+                v = minimax_small_large(board, POS_X, POS_Y, depth, -np.inf, np.inf, target, False,
+                                        agentNo, oppNo, memory)
+                print("value is {} for coordinates({},{})".format(v, i, j))
+                # print("Board evaluation after playing {},{}:{}".format(
+                #     i, j, evaluate_board_ult(board, target)))
+                small_board[i][j] = 0
+                if (v > best_val):
+                    best_val = v
+                    best_move = [POS_X, POS_Y, i, j]
+    return best_move
+
+
+def minimax_small_large(board,
+                        POS_X, POS_Y,
+                        depth,
+                        alpha,
+                        beta,
+                        target,
+                        isMax,
+                        agentNo,
+                        oppNo,
+                        memory={}):
+    # board_val = evaluate_board(board, target, memory) * agentNo
+    board_val = evaluate_small_large_board(board, agentNo, oppNo)
+    small_board = board[POS_X, POS_Y]
+    if (depth == 0):  # or terminated(board, target)
+        print('======> board_val for the board {} {} is : {}'.format(
+            POS_X, POS_Y, board_val))
+        return board_val
+    # Maximizing player
+    if (isMax):
+        max_Val = -np.inf
+        for i in range(3):
+            for j in range(3):
+                if (small_board[i][j] == 0):
+
+                    small_board[i][j] = agentNo
+                    val = minimax_small_large(board, POS_X, POS_Y, depth - 1, alpha, beta, target, False,
+                                              agentNo, oppNo, memory)
+                    small_board[i][j] = 0
+
+                    max_Val = max(max_Val, val)
+
+                    # alph-beta
+                    alpha = max(alpha, max_Val)
+                    if (beta <= alpha):
+                        break
+        return max_Val
+    else:
+        min_Val = np.inf
+        for i in range(3):
+            for j in range(3):
+                if (small_board[i][j] == 0):
+
+                    small_board[i][j] = oppNo
+                    # print('==================== depth', depth)
+                    val = minimax_small_large(board, POS_X, POS_Y, depth - 1, alpha, beta, target, True,
+                                              agentNo, oppNo, memory)
+                    small_board[i][j] = 0
+
+                    min_Val = min(min_Val, val)
+
+                    # alph-beta
+                    beta = min(beta, min_Val)
+                    if (beta <= alpha):
+                        break
+        return min_Val

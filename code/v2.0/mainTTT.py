@@ -106,8 +106,6 @@ def local_playing():
                                                         opp_player, 1, memory)
         # pos_X, pos_Y, pos_x, pos_y = best_next_move_small(game_board, target, agent_player,
         #                                                 opp_player, 1, memory)
-        print('==========> pos_X, pos_Y, pos_x, pos_y',
-              pos_X, pos_Y, pos_x, pos_y)
 
         game_board[pos_X, pos_Y][pos_x, pos_y] = agent_player
         NEXT_BOARD_X = pos_x
@@ -171,8 +169,11 @@ def local_playing():
         # POS_X, POS_Y, pos_x, pos_y = best_next_move_ult(game_board, POS_X, POS_Y, target, agent_player,
         #                                                 opp_player, 1, memory)
         else:
-            pos_X, pos_Y, pos_x, pos_y = best_next_move_small(game_board, pos_x, pos_y, target, agent_player,
-                                                              opp_player, 1, memory)
+            print('=== RUNNED best_next_move_small_large')
+            # pos_X, pos_Y, pos_x, pos_y = best_next_move_small(game_board, pos_x, pos_y, target, agent_player,
+            #                                                   opp_player, 1, memory)
+            pos_X, pos_Y, pos_x, pos_y = best_next_move_small_large(game_board, pos_x, pos_y, target, agent_player,
+                                                                    opp_player, 1, memory)
         game_board[pos_X, pos_Y][pos_x, pos_y] = agent_player
         NEXT_BOARD_X = pos_x
         NEXT_BOARD_Y = pos_y
