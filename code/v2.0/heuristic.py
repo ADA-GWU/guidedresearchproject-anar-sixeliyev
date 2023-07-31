@@ -87,7 +87,7 @@ def evaluate_board(board, target, memory={}):
 
 
 def evaluate_small_large_board(ultimate_board, player, opponent):
-    return heur2(ultimate_board, player, opponent)
+    return heur1(ultimate_board, player, opponent) + heur2(ultimate_board, player, opponent)
 # Helper function to check if two positions are part of a winning sequence
 
 
@@ -97,11 +97,13 @@ def is_winning_sequence(x1, y1, x2, y2):
 # Heuristic 1 (heur1)
 
 
-def heur1(small_board, player, opponent):
-    if check_small_board_winner(small_board, player):
+def heur1(ultimate_board, player, opponent):
+    if check_large_board_winner(ultimate_board, player):
         return 10000
-    elif check_small_board_winner(small_board, opponent):
+    elif check_large_board_winner(ultimate_board, opponent):
         return -10000
+    else:
+        return 0
 
 # Heuristic 2 (heur2)
 
