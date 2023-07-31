@@ -117,6 +117,8 @@ def local_playing():
         # print('~~~~MOVE MADE - UPDATED BOARD: \n', game_board)
         print("AI Played in postion ({},{})".format(pos_x, pos_y))
         print("====================")
+    elif agent_player == -1:
+        NEXT_BOARD_X, NEXT_BOARD_Y = select_board()
 
     while True:
         if check_large_board_winner(game_board, agent_player):
