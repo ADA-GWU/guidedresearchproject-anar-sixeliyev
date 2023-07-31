@@ -66,24 +66,24 @@ def calc_diagonal_scores(board, target):
 #   return score
 
 
-def get_board_tuple(board, target):
-    board_tuple = tuple(map(tuple, board))
-    board_target_tuple = (board_tuple, target)
-    return board_target_tuple
+# def get_board_tuple(board, target):
+#     board_tuple = tuple(map(tuple, board))
+#     board_target_tuple = (board_tuple, target)
+#     return board_target_tuple
 
 
-def evaluate_board(board, target, memory={}):
-    if (get_board_tuple(board, target) in memory):
-        print('=====> inside the memory')
-        return memory[get_board_tuple(board, target)]
+# def evaluate_board(board, target, memory={}):
+#     if (get_board_tuple(board, target) in memory):
+#         print('=====> inside the memory')
+#         return memory[get_board_tuple(board, target)]
 
-    score = calc_row_scores(board, target) + calc_column_scores(board,
-                                                                target) + calc_diagonal_scores(board, target)
-    # print('=====>', calc_row_scores(board, target), calc_column_scores(
-    #     board, target), calc_diagonal_scores(board, target), score)
-    #! TEMPORARILY - not using memorization
-    # memory[get_board_tuple(board, target)] = score
-    return score
+#     score = calc_row_scores(board, target) + calc_column_scores(board,
+#                                                                 target) + calc_diagonal_scores(board, target)
+#     # print('=====>', calc_row_scores(board, target), calc_column_scores(
+#     #     board, target), calc_diagonal_scores(board, target), score)
+#     #! TEMPORARILY - not using memorization
+#     # memory[get_board_tuple(board, target)] = score
+#     return score
 
 
 def evaluate_small_large_board(ultimate_board, player, opponent):
