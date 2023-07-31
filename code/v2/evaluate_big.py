@@ -21,7 +21,7 @@ def evaluate_board_ult(ultimate_board, player, opponent, memory={}):
                         for small_board in row) for row in ultimate_board)
 
     if (board_tuple in memory):
-        print('=====> inside the memory')
+        # print('=====> inside the memory')
         return memory[board_tuple]
 
     score = 0
