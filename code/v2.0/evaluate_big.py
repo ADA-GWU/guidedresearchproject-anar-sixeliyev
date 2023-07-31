@@ -22,7 +22,7 @@ def evaluate_board_ult(ultimate_board, player, opponent, memory={}):
 
     if (board_tuple in memory):
         print('=====> inside the memory')
-        return memory[ultimate_board]
+        return memory[board_tuple]
 
     score = 0
 
