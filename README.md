@@ -1,3 +1,7 @@
+# LAST VERSIOON OF PRESENTATION:
+https://docs.google.com/presentation/d/1bG8kSlbRmdGbXPlnWH5VENSQgfzns7pWHLdJW086uJY/edit?usp=sharing
+
+
 # guidedresearchproject-anar-sixeliyev
 # Board Game: Tactical Tic-Tac-Toe
 
