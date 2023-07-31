@@ -96,8 +96,6 @@ def local_playing():
     memory = {}
     game_board = np.zeros(
         (board_size, board_size, board_size, board_size), dtype=np.int32)
-    # print(game_board[0][0][0][0])
-    # print_board(game_board)
     opp_player = -agent_player
 
     if agent_player == 1:
@@ -128,9 +126,9 @@ def local_playing():
             print("GAME_OVER: HUMAN WINS")
             break
 
-        # if tie_game(game_board):
-        #     print("GAME_OVER: TIE")
-        #     break
+        if tie_game_big(game_board):
+            print("GAME_OVER: TIE")
+            break
 
         print("Human Plays...")
         if (check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], agent_player) or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], opp_player)):
@@ -157,9 +155,9 @@ def local_playing():
             print("GAME_OVER: HUMAN WINS")
             break
 
-        # if tie_game(game_board):
-        #     print("GAME_OVER: TIE")
-        #     break
+        if tie_game_big(game_board):
+            print("GAME_OVER: TIE")
+            break
 
         print("AI Plays...")
         if (check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], agent_player) or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], opp_player)):

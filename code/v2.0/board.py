@@ -1,9 +1,22 @@
 
 import numpy as np
 
+from heuristic import *
 
-def tie_game(board):
+
+def tie_game_small(board):
     return np.count_nonzero(board) == board.size
+
+
+def tie_game_big(ultimate_board):
+    # Check if all small boards are full and there is no winner in the large board
+    for i in range(3):
+        for j in range(3):
+            if not check_small_board_winner(ultimate_board[i][j], 1) and not check_small_board_winner(ultimate_board[i][j], -1) and not tie_game_small(ultimate_board[i][j]):
+                return False
+
+    # Check if the large board itself is not won by any player
+    return not check_large_board_winner(ultimate_board, 1) and not check_large_board_winner(ultimate_board, -1)
 
 
 def check_rows(board, target):
@@ -88,9 +101,9 @@ def print_ultimate_board(ultimate_board):
                     if cell == "":
                         print(" ", end=" ")
                     else:
-                        if(cell ==1):
+                        if (cell == 1):
                             print("X", end=" ")
-                        elif(cell == -1):
+                        elif (cell == -1):
                             print("O", end=" ")
                         else:
                             print("*", end=" ")
