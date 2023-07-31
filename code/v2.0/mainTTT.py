@@ -88,9 +88,7 @@ def select_board():
 
 
 def local_playing():
-    # board_size = int(input("Please enter board size: "))
     board_size = 3
-    # target = int(input("Please enter consecutive symbol size: "))
     target = 3
     agent_player = int(input("Choose agent side as 1 or -1: "))
     memory = {}
