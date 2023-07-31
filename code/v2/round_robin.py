@@ -244,6 +244,6 @@ def minmax_vs_ab():
 
 if __name__ == "__main__":
     # play_game()
-    # ab_vs_ab()
+    ab_vs_ab()
     # ab_vs_minmax()
-    minmax_vs_ab()
+    # minmax_vs_ab()
