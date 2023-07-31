@@ -93,26 +93,19 @@ def best_next_move_ult(ultimate_board, target, agentNo, oppNo, depth=3, memory={
     for i in range(3):
         for j in range(3):
             if check_small_board_winner(ultimate_board[i][j], agentNo) or check_small_board_winner(ultimate_board[i][j], oppNo):
-                # Small board is already won, skip it.
                 continue
-            # else:
-            #     print('~~~~~~~Small board is NOT won, continuing')
             for x in range(3):
                 for y in range(3):
                     if ultimate_board[i][j][x][y] == 0:
                         ultimate_board[i][j][x][y] = agentNo
 
                         # Optimization: if winning move, then return immediately
-                        # print('=========> checking if game is won', check_small_board_winner(
-                        #     ultimate_board[i][j], agentNo))
                         if check_small_board_winner(ultimate_board[i][j], agentNo):
                             ultimate_board[i][j][x][y] = 0
                             return (i, j, x, y)
 
-                        # Calling minimax on the large board
                         val = minimax_ult(ultimate_board, depth, -np.inf,
                                           np.inf, target, False, agentNo, oppNo, memory)
-                        # print('===> value from minimax', val)
                         ultimate_board[i][j][x][y] = 0
 
                         if val > best_val:
@@ -125,9 +118,7 @@ def best_next_move_ult(ultimate_board, target, agentNo, oppNo, depth=3, memory={
 def minimax_ult(ultimate_board, depth, alpha, beta, target, isMax, agentNo, oppNo, memory={}):
     board_val = evaluate_board_ult(ultimate_board, agentNo, oppNo)
 
-    # print('~~~~~~~BOARD EVALUATED score', board_val)
-
-    if depth == 0:  # or terminated(ultimate_board, target):
+    if depth == 0 or terminated(ultimate_board):
         return board_val
 
     # Maximizing player
@@ -136,7 +127,6 @@ def minimax_ult(ultimate_board, depth, alpha, beta, target, isMax, agentNo, oppN
         for i in range(3):
             for j in range(3):
                 if check_small_board_winner(ultimate_board[i][j], agentNo) or check_small_board_winner(ultimate_board[i][j], oppNo):
-                    # Small board is already won, skip it.
                     continue
 
                 for x in range(3):
@@ -181,7 +171,6 @@ def best_next_move_small(board, POS_X, POS_Y, target, agentNo, oppNo, depth=3, m
     best_move = []
     best_val = -np.inf
     small_board = board[POS_X, POS_Y]
-    # depth = 3
     print('====> board.shape', board.shape)
     for i in range(3):
         for j in range(3):
@@ -210,8 +199,7 @@ def best_next_move_small_large(board, POS_X, POS_Y, target, agentNo, oppNo, dept
     best_move = []
     best_val = -np.inf
     small_board = board[POS_X, POS_Y]
-    # depth = 3
-    print('====> board.shape', board.shape)
+
     for i in range(3):
         for j in range(3):
             if (small_board[i][j] == 0):
@@ -245,13 +233,11 @@ def minimax_small_large(board,
                         agentNo,
                         oppNo,
                         memory={}):
-    # board_val = evaluate_board(board, target, memory) * agentNo
     board_val = evaluate_small_large_board(board, agentNo, oppNo)
     small_board = board[POS_X, POS_Y]
-    if (depth == 0):  # or terminated(board, target)
-        print('======> board_val for the board {} {} is : {}'.format(
-            POS_X, POS_Y, board_val))
+    if (depth == 0) or terminated(board):
         return board_val
+
     # Maximizing player
     if (isMax):
         max_Val = -np.inf
@@ -278,7 +264,6 @@ def minimax_small_large(board,
                 if (small_board[i][j] == 0):
 
                     small_board[i][j] = oppNo
-                    # print('==================== depth', depth)
                     val = minimax_small_large(board, POS_X, POS_Y, depth - 1, alpha, beta, target, True,
                                               agentNo, oppNo, memory)
                     small_board[i][j] = 0
