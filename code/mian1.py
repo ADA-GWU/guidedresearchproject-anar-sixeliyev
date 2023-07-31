@@ -8,10 +8,69 @@ from timeit import default_timer as timer
 
 import numpy as np
 
-from api_wrapper import APIWrapper
 from board import *
 from heuristic import *
 from minimax import *
+
+
+def ai_vs_ai(board_size: int = 3, target_size: int = 3, depth=3, memory={}):
+    """
+  This function is used to play tic-tac-toe between same AI vs AI.
+  Goal of self playing is for memorizing board evaluations.
+  """
+    # s_all = timer()
+    game_board = np.zeros((board_size, board_size), dtype=np.int32)
+    agent1 = 1
+    agent2 = -1
+
+    while True:
+        s1 = timer()
+        print("AI_1 Plays...")
+        pos_x, pos_y = best_next_move(game_board, target_size, agent1, agent2,
+                                      depth, memory)
+        game_board[pos_x, pos_y] = agent1
+        #         print_board(game_board)
+        print(game_board)
+        e1 = timer()
+        print("AI_1 Played in postion ({},{})".format(pos_x, pos_y))
+        print("Execution time {}".format(e1 - s1))
+        print("====================")
+
+        is_game_end = game_end(game_board, target_size)
+        if is_game_end == 1:
+            print("AI_1 won the game")
+            break
+        if is_game_end == 2:
+            print("AI_2 won the game")
+            break
+
+        if tie_game(game_board):
+            print("GAME_OVER: TIE")
+            break
+
+        print("AI_2 Plays...")
+        s2 = timer()
+        pos_x, pos_y = best_next_move(game_board, target_size, agent2, agent1,
+                                      depth, memory)
+        game_board[pos_x, pos_y] = agent2
+        #         print_board(game_board)
+        print(game_board)
+        print("AI_2 Played in postion ({},{})".format(pos_x, pos_y))
+        e2 = timer()
+        print("Execution time {}".format(e2 - s2))
+        print("====================")
+
+        is_game_end = game_end(game_board, target_size)
+        if is_game_end == 1:
+            print("AI_1 won the game")
+            break
+        if is_game_end == 2:
+            print("AI_2 won the game")
+            break
+
+        if tie_game(game_board):
+            print("GAME_OVER: TIE")
+            break
 
 
 def opp_play():
