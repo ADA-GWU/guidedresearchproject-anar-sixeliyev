@@ -68,8 +68,8 @@ def game_end(board, target):
     return 0
 
 
-def terminated(board, target):
-    return game_end(board, target) != 0 or tie_game(board)
+def terminated(board):
+    return check_large_board_winner(board, 1) or check_large_board_winner(board, -1) or tie_game_big(board)
 
 
 def get_successors(board, player):
