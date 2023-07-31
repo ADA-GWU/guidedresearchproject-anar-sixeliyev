@@ -1,7 +1,29 @@
 import numpy as np
 
 
-def evaluate_board_ult(ultimate_board, player, opponent):
+def get_board_tuple(board):
+    board_tuple = tuple(map(tuple, board))
+    return board_tuple
+
+
+def get_ultimate_board_tuple(ultimate_board):
+    ultimate_board_tuple = tuple(tuple(map(tuple, board))
+                                 for board in ultimate_board)
+    return ultimate_board_tuple
+
+
+def convert_to_tuple(board):
+    return tuple(map(tuple, board))
+
+
+def evaluate_board_ult(ultimate_board, player, opponent, memory={}):
+    board_tuple = tuple(tuple(convert_to_tuple(small_board)
+                        for small_board in row) for row in ultimate_board)
+
+    if (board_tuple in memory):
+        print('=====> inside the memory')
+        return memory[ultimate_board]
+
     score = 0
 
     # Evaluate small boards
@@ -24,6 +46,8 @@ def evaluate_board_ult(ultimate_board, player, opponent):
     opponent_control = count_next_small_board_moves(ultimate_board, opponent)
     # print('player_control, opponent_control', player_control, opponent_control)
     score += (player_control - opponent_control) * 10
+
+    memory[board_tuple] = score
 
     return score
 
