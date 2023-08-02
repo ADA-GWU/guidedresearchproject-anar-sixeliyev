@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-25T07:11:41.129Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="aADx3FL8LPwRXadD_ZGd" version="21.3.7" type="device">
+<mxfile host="app.diagrams.net" modified="2023-07-31T19:15:57.359Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="6flfADIyJv4ZizSYNTtS" version="21.5.0" type="device">
   <diagram name="Page-1" id="52a04d89-c75d-2922-d76d-85b35f80e030">
     <mxGraphModel dx="1242" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -12,104 +12,95 @@
         <mxCell id="17472293e6e8944d-30" value="Research the existing literature on board game design" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="30" y="33" width="110" height="57" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-1" target="FbzcXLJzpMlFmON38h0d-4">
+        <mxCell id="FbzcXLJzpMlFmON38h0d-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FbzcXLJzpMlFmON38h0d-1" target="FbzcXLJzpMlFmON38h0d-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-1" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font face=&quot;Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji&quot; color=&quot;#ffffff&quot;&gt;Analyze different AI approaches suitable for the board game&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="FbzcXLJzpMlFmON38h0d-1" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font face=&quot;Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji&quot; color=&quot;#ffffff&quot;&gt;Analyze different AI approaches suitable for the board game&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="210" y="30.00000000000003" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-4" target="FbzcXLJzpMlFmON38h0d-6">
+        <mxCell id="FbzcXLJzpMlFmON38h0d-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FbzcXLJzpMlFmON38h0d-4" target="FbzcXLJzpMlFmON38h0d-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-4" value="Design and develop the board game" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+        <mxCell id="FbzcXLJzpMlFmON38h0d-4" value="Design and develop the board game" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="380" y="30.00000000000003" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-6" target="FbzcXLJzpMlFmON38h0d-9">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-6" target="A6NxPB_Ag9_2qDe2lWld-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-6" value="Implement AI opponents" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="550" y="30.00000000000003" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-9" target="FbzcXLJzpMlFmON38h0d-11">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-6" target="A6NxPB_Ag9_2qDe2lWld-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-9" value="Collect data by letting AI play against itself" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="170.00000000000003" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-11" target="FbzcXLJzpMlFmON38h0d-13">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-6" target="A6NxPB_Ag9_2qDe2lWld-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-11" value="Evaluate AI performance, gather metrics" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="380" y="170.00000000000003" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-13" target="FbzcXLJzpMlFmON38h0d-15">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-6" target="A6NxPB_Ag9_2qDe2lWld-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-13" value="Refine AI based on the experiments" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="210" y="170.00000000000003" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-15" value="Analyze the data and compare performance of different AI agents" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="25" y="170.00000000000003" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-17" target="FbzcXLJzpMlFmON38h0d-15">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-6" target="A6NxPB_Ag9_2qDe2lWld-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-20" value="yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-17" target="FbzcXLJzpMlFmON38h0d-19">
+        <mxCell id="FbzcXLJzpMlFmON38h0d-6" value="Implement AI opponents" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="530" y="100" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FbzcXLJzpMlFmON38h0d-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FbzcXLJzpMlFmON38h0d-9" target="FbzcXLJzpMlFmON38h0d-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-22" value="no" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-17" target="FbzcXLJzpMlFmON38h0d-21">
+        <mxCell id="FbzcXLJzpMlFmON38h0d-9" value="Collect data by letting AI play against itself" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="310" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FbzcXLJzpMlFmON38h0d-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FbzcXLJzpMlFmON38h0d-11" target="FbzcXLJzpMlFmON38h0d-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-17" value="time is enough" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="45" y="300" width="80" height="80" as="geometry" />
+        <mxCell id="FbzcXLJzpMlFmON38h0d-11" value="Evaluate AI performance, gather metrics" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="310" y="425" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-19" target="FbzcXLJzpMlFmON38h0d-26">
+        <mxCell id="FbzcXLJzpMlFmON38h0d-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="FbzcXLJzpMlFmON38h0d-13" target="FbzcXLJzpMlFmON38h0d-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-19" target="FbzcXLJzpMlFmON38h0d-29">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-13" target="FbzcXLJzpMlFmON38h0d-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="590" />
+              <mxPoint x="770" y="590" />
+              <mxPoint x="770" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FbzcXLJzpMlFmON38h0d-13" value="Refine AI based on the experiments" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="310" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FbzcXLJzpMlFmON38h0d-15" value="Analyze the data and compare performance of different AI agents" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="100" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="A6NxPB_Ag9_2qDe2lWld-1" target="FbzcXLJzpMlFmON38h0d-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-19" value="developing SOFTWARE" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="380" width="120" height="60" as="geometry" />
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-1" value="Random agent" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-21" target="FbzcXLJzpMlFmON38h0d-39">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="A6NxPB_Ag9_2qDe2lWld-2" target="FbzcXLJzpMlFmON38h0d-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-21" value="time is enough" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="45" y="425" width="80" height="80" as="geometry" />
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-2" value="Agent trained for only small 3x3 board" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-26" target="FbzcXLJzpMlFmON38h0d-31">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="A6NxPB_Ag9_2qDe2lWld-3" target="FbzcXLJzpMlFmON38h0d-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-26" value="FRONTEND" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="380" y="480" width="120" height="60" as="geometry" />
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-3" value="Minmax agent" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-29" target="FbzcXLJzpMlFmON38h0d-37">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="A6NxPB_Ag9_2qDe2lWld-9" target="FbzcXLJzpMlFmON38h0d-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-29" value="BACKEND" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="370" y="280" width="120" height="60" as="geometry" />
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-9" value="Alpha-Beta agent" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-31" target="FbzcXLJzpMlFmON38h0d-33">
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="A6NxPB_Ag9_2qDe2lWld-10" target="FbzcXLJzpMlFmON38h0d-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FbzcXLJzpMlFmON38h0d-31" target="FbzcXLJzpMlFmON38h0d-35">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-31" value="developing UI for the game with 2 modes" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="540" y="480" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-33" value="player vs AI" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="540" y="400" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-35" value="player vs player" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="540" y="560" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-37" value="user implementation, being able to join invited games" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="570" y="280" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="FbzcXLJzpMlFmON38h0d-39" value="Draw conclusions and insights from the research findings." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="25" y="560" width="120" height="60" as="geometry" />
+        <mxCell id="A6NxPB_Ag9_2qDe2lWld-10" value="Alpha-beta with memorization" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="200" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
