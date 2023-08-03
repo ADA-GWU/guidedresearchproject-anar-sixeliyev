@@ -71,6 +71,9 @@ def game_end(board, target):
 def terminated(board):
     return check_large_board_winner(board, 1) or check_large_board_winner(board, -1) or tie_game_big(board)
 
+def terminated_small(board):
+    return check_small_board_winner(board, 1) or check_small_board_winner(board, -1) or tie_game_small(board)
+
 
 def get_successors(board, player):
     arr_successors = []
