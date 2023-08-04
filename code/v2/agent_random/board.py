@@ -68,6 +68,7 @@ def game_end(board, target):
 def terminated(board):
     return check_large_board_winner(board, 1) or check_large_board_winner(board, -1) or tie_game_big(board)
 
+
 def terminated_small(board):
     return check_small_board_winner(board, 1) or check_small_board_winner(board, -1) or tie_game_small(board)
 
@@ -118,6 +119,7 @@ def print_ultimate_board(ultimate_board):
                 print("-" * 40)
 
     # print("=" * 71)
+
 
 def check_small_board_winner(small_board, player):
     for i in range(3):
