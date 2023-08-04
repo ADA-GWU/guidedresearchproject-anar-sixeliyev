@@ -11,7 +11,7 @@ from board import *
 from minimax import *
 
 
-def ai_vs_ai(num_games=10):
+def ai_vs_ai(num_games=3):
     board_size = 3
     target = 3
     agent_player = 1
@@ -34,19 +34,24 @@ def ai_vs_ai(num_games=10):
         while True:
             if check_large_board_winner(game_board, agent_player):
                 print("GAME_OVER: AI 1 WINS")
+                print_ultimate_board(game_board)
+
                 ai1_wins += 1
                 break
             if check_large_board_winner(game_board, opp_player):
                 print("GAME_OVER: AI 2 WINS")
+                print_ultimate_board(game_board)
+
                 ai2_wins += 1
                 break
 
             if tie_game_big(game_board):
                 print("GAME_OVER: TIE")
+                print_ultimate_board(game_board)
                 ties += 1
                 break
 
-            if NEXT_BOARD_X == -1 or NEXT_BOARD_Y == -1 or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], agent_player) or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], opp_player):
+            if NEXT_BOARD_X == -1 or NEXT_BOARD_Y == -1 or terminated_small(game_board[NEXT_BOARD_X, NEXT_BOARD_Y]):
                 print('<====BOARD {} {} IS WON, AI 1 SELECTS A NEW BOARD====>\n'.format(
                     NEXT_BOARD_X, NEXT_BOARD_Y))
                 pos_X, pos_Y, pos_x, pos_y = best_next_move_ult(
@@ -65,15 +70,19 @@ def ai_vs_ai(num_games=10):
 
             if check_large_board_winner(game_board, agent_player):
                 print("GAME_OVER: AI 1 WINS")
+                print_ultimate_board(game_board)
+
                 ai1_wins += 1
                 break
 
             if tie_game_big(game_board):
                 print("GAME_OVER: TIE")
+                print_ultimate_board(game_board)
+
                 ties += 1
                 break
 
-            if NEXT_BOARD_X == -1 or NEXT_BOARD_Y == -1 or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], agent_player) or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], opp_player):
+            if NEXT_BOARD_X == -1 or NEXT_BOARD_Y == -1 or terminated_small(game_board[NEXT_BOARD_X, NEXT_BOARD_Y]):
                 print('<====BOARD {} {} IS WON, AI 2 SELECTS A NEW BOARD====>\n'.format(
                     NEXT_BOARD_X, NEXT_BOARD_Y))
                 pos_X, pos_Y, pos_x, pos_y = best_next_move_ult(
@@ -82,6 +91,7 @@ def ai_vs_ai(num_games=10):
                 print('=== AI 2 RUNS best_next_move_small_large')
                 pos_X, pos_Y, pos_x, pos_y = best_next_move_small_large(
                     game_board, pos_x, pos_y, target, opp_player, agent_player, 1, memory)
+                # print('moves: ', pos_X, pos_Y, pos_x, pos_y)
 
             game_board[pos_X, pos_Y][pos_x, pos_y] = opp_player
             NEXT_BOARD_X = pos_x
@@ -128,9 +138,9 @@ def local_playing():
     opp_player = -agent_player
 
     if agent_player == 1:
-        print("AI Plays...")
+        print("AI Plays... ")
         pos_X, pos_Y, pos_x, pos_y = best_next_move_ult(game_board, target, agent_player,
-                                                        opp_player, 1, memory)
+                                                        opp_player, 2, memory)
 
         game_board[pos_X, pos_Y][pos_x, pos_y] = agent_player
         NEXT_BOARD_X = pos_x
@@ -183,15 +193,19 @@ def local_playing():
             print("GAME_OVER: TIE")
             break
 
-        print("AI Plays...")
+        # print("AI Plays...")
         if (check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], agent_player) or check_small_board_winner(game_board[NEXT_BOARD_X, NEXT_BOARD_Y], opp_player)):
+            print("AI Plays... best_next_move_ult")
+
             print('<====BOARD {} {} IS WON====>\n'.format(
                 NEXT_BOARD_X, NEXT_BOARD_Y))
             pos_X, pos_Y, pos_x, pos_y = best_next_move_ult(game_board, target, agent_player,
-                                                            opp_player, 1, memory)
+                                                            opp_player, 2, memory)
         else:
+            print("AI Plays... best_next_move_small_large")
+
             pos_X, pos_Y, pos_x, pos_y = best_next_move_small_large(game_board, pos_x, pos_y, target, agent_player,
-                                                                    opp_player, 1, memory)
+                                                                    opp_player, 2, memory)
         game_board[pos_X, pos_Y][pos_x, pos_y] = agent_player
         NEXT_BOARD_X = pos_x
         NEXT_BOARD_Y = pos_y

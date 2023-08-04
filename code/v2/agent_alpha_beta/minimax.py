@@ -6,18 +6,21 @@ from evaluate_small_big import *
 
 
 def best_next_move_ult(ultimate_board, target, agentNo, oppNo, depth=3, memory={}):
+    print('===inside best_next_move_ult ====')
+
     best_move = None
     best_val = -np.inf
 
     for i in range(3):
         for j in range(3):
-            if check_small_board_winner(ultimate_board[i][j], agentNo) or check_small_board_winner(ultimate_board[i][j], oppNo):
+            if terminated_small(ultimate_board[i][j]):
                 continue
             for x in range(3):
                 for y in range(3):
                     if ultimate_board[i][j][x][y] == 0:
                         ultimate_board[i][j][x][y] = agentNo
-
+                        # print(
+                        #     '===inside best_next_move_ult BEFORE check_small_board_winner ====')
                         # Optimization: if winning move, then return immediately
                         if check_small_board_winner(ultimate_board[i][j], agentNo):
                             ultimate_board[i][j][x][y] = 0
@@ -25,6 +28,8 @@ def best_next_move_ult(ultimate_board, target, agentNo, oppNo, depth=3, memory={
 
                         val = minimax_ult(ultimate_board, depth, -np.inf,
                                           np.inf, target, False, agentNo, oppNo, memory)
+                        # print(
+                        #     '===AFTER best_next_move_ult BEFORE check_small_board_winner ====')
                         ultimate_board[i][j][x][y] = 0
 
                         if val > best_val:
@@ -36,8 +41,10 @@ def best_next_move_ult(ultimate_board, target, agentNo, oppNo, depth=3, memory={
 
 def minimax_ult(ultimate_board, depth, alpha, beta, target, isMax, agentNo, oppNo, memory={}):
     board_val = evaluate_board_ult(ultimate_board, agentNo, oppNo)
+    # print("===> depth, board_val", depth, board_val)
 
     if depth == 0 or terminated(ultimate_board):
+        # print("===> board_val", board_val, depth)
         return board_val
 
     # Maximizing player
@@ -45,7 +52,7 @@ def minimax_ult(ultimate_board, depth, alpha, beta, target, isMax, agentNo, oppN
         max_Val = -np.inf
         for i in range(3):
             for j in range(3):
-                if check_small_board_winner(ultimate_board[i][j], agentNo) or check_small_board_winner(ultimate_board[i][j], oppNo):
+                if terminated_small(ultimate_board[i][j]):
                     continue
 
                 for x in range(3):
@@ -60,13 +67,15 @@ def minimax_ult(ultimate_board, depth, alpha, beta, target, isMax, agentNo, oppN
                             alpha = max(alpha, max_Val)
 
                             if beta <= alpha:
+                                # print('inside alpha-beta')
                                 break
         return max_Val
     else:
         min_Val = np.inf
         for i in range(3):
             for j in range(3):
-                if check_small_board_winner(ultimate_board[i][j], agentNo) or check_small_board_winner(ultimate_board[i][j], oppNo):
+                # if check_small_board_winner(ultimate_board[i][j], agentNo) or check_small_board_winner(ultimate_board[i][j], oppNo):
+                if terminated_small(ultimate_board[i][j]):
                     # Small board is already won, skip it.
                     continue
 
@@ -82,6 +91,7 @@ def minimax_ult(ultimate_board, depth, alpha, beta, target, isMax, agentNo, oppN
                             beta = min(beta, min_Val)
 
                             if beta <= alpha:
+                                # print('inside alpha-beta')
                                 break
         return min_Val
 
@@ -119,8 +129,10 @@ def minimax_small_large(board,
                         agentNo,
                         oppNo,
                         memory={}):
-    board_val = evaluate_small_large_board(board, agentNo, oppNo)
+    board_val = evaluate_small_large_board(board, agentNo, oppNo, POS_X, POS_Y)
     small_board = board[POS_X, POS_Y]
+    # print("===> depth, board_val", depth, board_val)
+
     if (depth == 0) or terminated(board):
         return board_val
 
@@ -130,10 +142,13 @@ def minimax_small_large(board,
         for i in range(3):
             for j in range(3):
                 if (small_board[i][j] == 0):
-
+                    val = 0
                     small_board[i][j] = agentNo
-                    val = minimax_small_large(board, POS_X, POS_Y, depth - 1, alpha, beta, target, False,
-                                              agentNo, oppNo, memory)
+                    if terminated_small(board[i][j]):
+                        val -= 10
+
+                    val += minimax_small_large(board, POS_X, POS_Y, depth - 1, alpha, beta, target, False,
+                                               agentNo, oppNo, memory)
                     small_board[i][j] = 0
 
                     max_Val = max(max_Val, val)
@@ -141,6 +156,7 @@ def minimax_small_large(board,
                     # alph-beta
                     alpha = max(alpha, max_Val)
                     if (beta <= alpha):
+                        # print('inside alpha-beta')
                         break
         return max_Val
     else:
@@ -148,10 +164,13 @@ def minimax_small_large(board,
         for i in range(3):
             for j in range(3):
                 if (small_board[i][j] == 0):
-
+                    val = 0
                     small_board[i][j] = oppNo
-                    val = minimax_small_large(board, POS_X, POS_Y, depth - 1, alpha, beta, target, True,
-                                              agentNo, oppNo, memory)
+
+                    # if terminated_small(board[i][j]):
+                    #     val -= 10
+                    val += minimax_small_large(board, POS_X, POS_Y, depth - 1, alpha, beta, target, True,
+                                               agentNo, oppNo, memory)
                     small_board[i][j] = 0
 
                     min_Val = min(min_Val, val)
@@ -159,5 +178,6 @@ def minimax_small_large(board,
                     # alph-beta
                     beta = min(beta, min_Val)
                     if (beta <= alpha):
+                        # print('inside alpha-beta')
                         break
         return min_Val

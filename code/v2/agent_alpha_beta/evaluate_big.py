@@ -23,7 +23,7 @@ def evaluate_board_ult(ultimate_board, player, opponent, memory={}):
                         for small_board in row) for row in ultimate_board)
 
     if (board_tuple in memory):
-        # print('=====> inside the memory')
+        # print('=====> inside the memory: ', memory[board_tuple])
         return memory[board_tuple]
 
     score = 0
@@ -46,7 +46,9 @@ def evaluate_board_ult(ultimate_board, player, opponent, memory={}):
     # Evaluate player's control over the next small board move
     player_control = count_next_small_board_moves(ultimate_board, player)
     opponent_control = count_next_small_board_moves(ultimate_board, opponent)
-    # print('player_control, opponent_control', player_control, opponent_control)
+
+    # print('player_control, opponent_control', player_control,
+    #       opponent_control, player_control - opponent_control)
     score += (player_control - opponent_control) * 10
 
     memory[board_tuple] = score
@@ -58,6 +60,7 @@ def count_next_small_board_moves(ultimate_board, player):
     count = 0
     previous_move = find_previous_move(ultimate_board)
     if previous_move is not None:
+        # print('=====> previous_move', previous_move)
         small_board_x, small_board_y = previous_move
         small_board = ultimate_board[small_board_x][small_board_y]
         count = sum(1 for row in small_board for cell in row if cell == 0)
